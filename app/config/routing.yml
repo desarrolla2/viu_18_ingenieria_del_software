@@ -1,0 +1,2 @@
+_app:
+  resource: routing/app.yml

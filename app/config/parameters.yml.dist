@@ -1,0 +1,16 @@
+# This file is auto-generated during the composer install
+parameters:
+
+    database_host: 127.0.0.1
+    database_name: 'devtia'
+    database_password: ''
+    database_port: null
+    database_user: 'root'
+
+    locale: 'en'
+    mailer_host: 'smtp.sendgrid.net'
+    mailer_password: ''
+    mailer_transport: 'smtp'
+    mailer_user: 'apikey'
+
+    secret: ''

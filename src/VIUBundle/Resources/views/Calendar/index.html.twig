@@ -1,0 +1,59 @@
+{% extends '@VIU/layout.html.twig' %}
+{% block main %}
+  <section class="content-header">
+    <h1>
+      Calendar
+    </h1>
+  </section>
+  <section class="content">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="box box-solid">
+          <div class="box-header with-border">
+            <h4 class="box-title">Draggable Events</h4>
+          </div>
+          <div class="box-body">
+            <!-- the events -->
+            <div id="external-events">
+              <div class="external-event bg-green">Lesson</div>
+              <div class="external-event bg-yellow">One to One</div>
+              <div class="checkbox">
+                <label for="drop-remove">
+                  <input type="checkbox" id="drop-remove">
+                  remove after drop
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- /.box-body -->
+        </div>
+        <!-- /. box -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-9">
+        <div class="box box-primary">
+          <div class="box-body no-padding">
+            <!-- THE CALENDAR -->
+            <div id="calendar"></div>
+          </div>
+          <!-- /.box-body -->
+        </div>
+        <!-- /. box -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </section>
+{% endblock %}
+{% block stylesheets %}
+  {{ parent() }}
+  <!-- jQuery UI 1.11.4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.min.css">
+{% endblock %}
+{% block javascripts %}
+  {{ parent() }}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.min.js"></script>
+  <script>{% include '@VIU/Calendar/index.javascript.js.twig' %}</script>
+{% endblock %}

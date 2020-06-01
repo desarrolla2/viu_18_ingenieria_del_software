@@ -1,0 +1,7 @@
+services:
+  faker:
+    class: 'Faker\Generator'
+    factory: ['Faker\Factory', create]
+    arguments: ['es_ES']
+    calls:
+      - [ 'seed', [ 1 ] ]

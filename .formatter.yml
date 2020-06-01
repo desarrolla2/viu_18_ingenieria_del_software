@@ -1,0 +1,16 @@
+use-sort:
+  group:
+    - _main
+  group-type: each
+  sort-type: alph
+  sort-direction: asc
+
+header: |
+  /*
+   * This file is part of the devtia package
+   *
+   * Copyright (c) 2016-2020 Daniel González
+   * All right reserved
+   *
+   * @author Daniel González <daniel@devtia.com>
+   */

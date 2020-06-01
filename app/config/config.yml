@@ -1,0 +1,89 @@
+imports:
+  - { resource: parameters.yml }
+  - { resource: bundles/doctrine_extensions.yml }
+  - { resource: bundles/exception.yml }
+  - { resource: bundles/fos_user.yml }
+  - { resource: bundles/knp-paginator.yml }
+  - { resource: bundles/liip_imagine.yml }
+  - { resource: bundles/migrations.yml }
+  - { resource: bundles/snappy.yml }
+  - { resource: bundles/sonata.yml }
+  - { resource: bundles/vich_uploader.yml }
+  - { resource: security.yml }
+  - { resource: services.yml }
+
+framework:
+  #esi:             ~
+  translator:      { fallbacks: ["%locale%"] }
+  secret:          "%secret%"
+  router:
+    resource: "%kernel.root_dir%/config/routing.yml"
+    strict_requirements: ~
+  form:            ~
+  csrf_protection: ~
+  validation:      { enable_annotations: true }
+  #serializer:      { enable_annotations: true }
+  templating:
+    engines: ['twig']
+  default_locale:  "%locale%"
+  trusted_hosts:   ~
+  session:
+    handler_id:  session.handler.native_file
+    save_path:   "%kernel.root_dir%/../var/sessions/%kernel.environment%"
+    cookie_lifetime: %app.cookie.lifetime%
+    cookie_secure: %app.cookie.secure%
+    cookie_httponly: true
+    name: "%app.cookie.name%"
+  fragments:       ~
+  http_method_override: true
+  assets: ~
+
+# Twig Configuration
+twig:
+  debug:            "%kernel.debug%"
+  strict_variables: "%kernel.debug%"
+  form_themes:
+    - '@Form/Form/fields.html.twig'
+  globals:
+    locale: "%locale%"
+    env: "%kernel.environment%"
+    title: "%app.title%"
+    host: "%app.host%"
+    description: "%app.description%"
+    google_analytics_id: "%app.google.analytics.id%"
+    google_tag_manager_id: "%app.google.tag_manager.id%"
+    google_recaptcha_key: "%app.google.recaptcha.key%"
+    #content_tag_number_to_show: "%app.content.tag.number_to_show%"
+    #content_tag_number_to_index: "%app.content.tag.number_to_index%"
+    deploy_hash: "%app.deploy.hash%"
+    use_recaptcha: false
+    allow_index: "%app.allow_index%"
+
+# Doctrine Configuration
+doctrine:
+  dbal:
+    driver:   pdo_mysql
+    host:     "%database_host%"
+    port:     "%database_port%"
+    dbname:   "%database_name%"
+    user:     "%database_user%"
+    password: "%database_password%"
+    charset:  UTF8
+    types:
+      json: 'Sonata\Doctrine\Types\JsonType'
+    server_version: '5.7'
+  orm:
+    auto_generate_proxy_classes: "%kernel.debug%"
+    naming_strategy: doctrine.orm.naming_strategy.underscore
+    auto_mapping: true
+    dql:
+      numeric_functions:
+        rand: DoctrineExtensions\Query\Mysql\Rand
+      string_functions:
+        MATCH_AGAINST: DoctrineExtensions\Query\Mysql\MatchAgainst
+# Swiftmailer Configuration
+swiftmailer:
+  transport: "%mailer_transport%"
+  host:      "%mailer_host%"
+  username:  "%mailer_user%"
+  password:  "%mailer_password%"

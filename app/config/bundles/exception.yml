@@ -1,0 +1,12 @@
+mail_exception:
+  from: '%app.email.from.email%'
+  to: '%app.email.notification.email%'
+  subject: '[%app.domain%] ~ An error has ocurred'
+  avoid:
+    environments:
+      - 'dev'
+      - 'test'
+    exceptions:
+      - 'Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException'
+      - 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException'
+      - 'Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException'

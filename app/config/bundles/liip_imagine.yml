@@ -1,0 +1,151 @@
+parameters:
+  liip_imagine.jpegoptim.binary: '/usr/bin/jpegoptim'
+
+liip_imagine:
+  loaders:
+    default:
+      filesystem:
+        data_root:
+          - "%kernel.root_dir%/../../../shared/web"
+          - "%kernel.root_dir%/../web"
+  resolvers:
+    default:
+      web_path:
+        web_root: "%kernel.root_dir%/../web"
+        cache_prefix: "/uploads/cache"
+  filter_sets:
+    cache: ~
+
+    thumb_300:
+      quality: 100
+      filters:
+        thumbnail: { size: [300, 300], mode: outbound }
+      post_processors:
+        jpegoptim: { strip_all: true, max: 90, progressive: true }
+
+    thumb_319_391:
+      quality: 100
+      filters:
+        thumbnail: { size: [319, 391], mode: outbound }
+      post_processors:
+        jpegoptim: { strip_all: true, max: 90, progressive: true }
+
+    thumb_366_249:
+      quality: 100
+      filters:
+        thumbnail: { size: [366, 249], mode: outbound }
+      post_processors:
+        jpegoptim: { strip_all: true, max: 90, progressive: true }
+
+    thumb_400:
+      quality: 100
+      filters:
+        thumbnail: { size: [400, 400], mode: outbound }
+      post_processors:
+        jpegoptim: { strip_all: true, max: 90, progressive: true }
+
+    thumb_400_200:
+      quality: 100
+      filters:
+        thumbnail: { size: [400, 200], mode: outbound }
+      post_processors:
+        jpegoptim: { strip_all: true, max: 90, progressive: true }
+
+    thumb_434_294:
+      quality: 100
+      filters:
+        thumbnail: { size: [434, 294], mode: outbound }
+      post_processors:
+        jpegoptim: { strip_all: true, max: 90, progressive: true }
+
+    thumb_400_300:
+      quality: 100
+      filters:
+        thumbnail: { size: [400, 300], mode: outbound }
+      post_processors:
+        jpegoptim: { strip_all: true, max: 90, progressive: true }
+
+    thumb_609_313:
+      quality: 100
+      filters:
+        thumbnail: { size: [609, 313], mode: outbound }
+      post_processors:
+        jpegoptim: { strip_all: true, max: 90, progressive: true }
+
+    thumb_683_508:
+      quality: 100
+      filters:
+        thumbnail: { size: [683, 508], mode: outbound }
+      post_processors:
+        jpegoptim: { strip_all: true, max: 90, progressive: true }
+
+    thumb_733_683:
+      quality: 100
+      filters:
+        thumbnail: { size: [733, 683], mode: outbound }
+      post_processors:
+        jpegoptim: { strip_all: true, max: 90, progressive: true }
+
+    thumb_765_777:
+      quality: 100
+      filters:
+        thumbnail: { size: [765, 777], mode: outbound }
+      post_processors:
+        jpegoptim: { strip_all: true, max: 90, progressive: true }
+
+    thumb_800_200:
+      quality: 100
+      filters:
+        thumbnail: { size: [800, 200], mode: outbound }
+      post_processors:
+        jpegoptim: { strip_all: true, max: 90, progressive: true }
+
+    thumb_800_500:
+      quality: 100
+      filters:
+        thumbnail: { size: [800, 500], mode: outbound }
+      post_processors:
+        jpegoptim: { strip_all: true, max: 90, progressive: true }
+
+    thumb_1200:
+      quality: 100
+      filters:
+        thumbnail: { size: [1200], mode: outbound }
+      post_processors:
+        jpegoptim: { strip_all: true, max: 90, progressive: true }
+
+
+    thumb_1200_200:
+      quality: 100
+      filters:
+        thumbnail: { size: [1200, 200], mode: outbound }
+      post_processors:
+        jpegoptim: { strip_all: true, max: 90, progressive: true }
+
+    thumb_1200_400:
+      quality: 100
+      filters:
+        thumbnail: { size: [1200, 400], mode: outbound }
+      post_processors:
+        jpegoptim: { strip_all: true, max: 90, progressive: true }
+
+    thumb_1200_600:
+      quality: 100
+      filters:
+        thumbnail: { size: [1200, 600], mode: outbound }
+      post_processors:
+        jpegoptim: { strip_all: true, max: 90, progressive: true }
+
+    thumb_1200_800:
+      quality: 100
+      filters:
+        thumbnail: { size: [1200, 800], mode: outbound }
+      post_processors:
+        jpegoptim: { strip_all: true, max: 90, progressive: true }
+
+    thumb_1200_1000:
+      quality: 100
+      filters:
+        thumbnail: { size: [1200, 1000], mode: outbound }
+      post_processors:
+        jpegoptim: { strip_all: true, max: 90, progressive: true }

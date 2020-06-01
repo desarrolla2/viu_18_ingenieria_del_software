@@ -1,0 +1,42 @@
+{% extends "AppBundle::layout.html.twig" %}
+{% block title %}403 Forbidden{% endblock %}
+{% block meta_robots %}noindex, nofollow{% endblock %}
+{% block main %}
+  <div class="blog__entry__page">
+    <div class="blog__entry__page__wrapper">
+      <div class="blog__entry__item__component">
+        <div class="blog__entry__item__component__header">
+          <div class="blog__entry__item__component__header__content">
+            <div class="blog__entry__item__component__header__content--title">
+              <div data-aos-delay="300" data-aos-easing="linear" data-aos-duration="600" data-aos="fade-right">
+                <h1>403 No tienes permiso</h1>
+              </div>
+              <div class="line" data-end="blog__entry__item__component__body__content" data-aos-offset="100"
+                   data-aos-easing="linear" data-aos-duration="900" data-aos="fade"></div>
+            </div>
+            <div class="blog__entry__item__component__header__content--figure" data-aos-delay="0"
+                 data-aos-easing="linear" data-aos-duration="300" data-aos="fade-left">
+              <figure>
+                <img src="{{ asset('bundles/app/img/error/403.jpeg') }}" alt="403 Forbidden">
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="blog__entry__item__component__body">
+          <div class="blog__entry__item__component__body__content">
+            <p class="text-center">
+              No tienes permiso para acceder a <em>{{ app.request.requestUri }}</em>
+            </p>
+            <p class="text-center mb50">
+              <a href="{{ path('_app.default.index') }}" class="btn btn--green">Ir a la página de inicio</a>
+            </p>
+            <h2 class=" mt50">¿Que ha ocurrido?</h2>
+            <p>No tienes permiso para poder acceder a este recurso.</p>
+            <h2 class=" mt50">¿Que puedo hacer?</h2>
+            <p>Si el problema persiste ponte en contacto con los administradores del sitio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

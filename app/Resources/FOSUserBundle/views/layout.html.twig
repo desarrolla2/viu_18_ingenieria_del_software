@@ -1,0 +1,9 @@
+{% extends '@App/layout.html.twig' %}
+{% block meta_robots %}noindex, follow{% endblock %}
+{% block main %}
+  <div class="blogs__container">
+    <div class="blogs__wrapper">
+      {% block fos_user_content %}{% endblock fos_user_content %}
+    </div>
+  </div>
+{% endblock %}

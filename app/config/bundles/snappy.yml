@@ -1,0 +1,16 @@
+knp_snappy:
+  temporary_folder: "%kernel.cache_dir%/snappy"
+  pdf:
+    binary: '/usr/local/bin/wkhtmltopdf'
+    options:
+      dpi: 96
+      page-size: 'A4'
+      zoom: 1
+      orientation: Portrait
+      viewport-size: '1200x1024'
+      margin-right: 10
+      margin-left: 10
+      margin-top: 10
+      margin-bottom: 10
+  image:
+    enabled:    false

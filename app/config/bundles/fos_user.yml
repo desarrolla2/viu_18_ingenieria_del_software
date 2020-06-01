@@ -1,0 +1,10 @@
+fos_user:
+  db_driver: orm
+  firewall_name: main
+  user_class: VIUBundle\Entity\User
+  from_email:
+    address: '%app.email.from.email%'
+    sender_name: '%app.title%'
+  registration:
+    confirmation:
+      enabled: true

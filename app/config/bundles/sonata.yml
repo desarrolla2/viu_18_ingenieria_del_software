@@ -1,0 +1,21 @@
+sonata_admin:
+  title: "%app.title%"
+  title_logo: '/assets/img/favicon.png'
+  show_mosaic_button: false
+  options:
+    confirm_exit: false
+  persist_filters: true
+  templates:
+    layout:  AdminBundle::layout.html.twig
+    user_block: AdminBundle::user_block.html.twig
+
+sonata_block:
+  default_contexts: [admin]
+  blocks:
+    sonata.admin.block.admin_list:
+      contexts: [admin]
+    sonata.admin.block.search_result:
+      contexts: [admin]
+    sonata.user.block.menu:
+    sonata.user.block.account:
+    sonata.block.service.text:

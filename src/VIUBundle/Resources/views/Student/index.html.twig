@@ -1,0 +1,51 @@
+{% extends '@VIU/layout.html.twig' %}
+{% block main %}
+  <section class="content-header">
+    <h1>Students <small>(20)</small></h1>
+  </section>
+  <section class="content">
+    {% for item in items %}
+      <div class="box box-default">
+        <div class="box-header"><h3 class="box-title">{{ item.name }} {{ item.lastName }}</h3></div>
+        <div class="box-body">
+          <div class="row">
+            <div class="col-sm-2 hidden-xs">
+              <img
+                src="https://www.gravatar.com/avatar/{{ loop.index }}?d=robohash&s=150"
+                class="img-thumbnail">
+            </div>
+            <div class="col-sm-10">
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <tr>
+                    <th>Course</th>
+                    <td class="text-right">Ingeniería del software</td>
+                    <td class="text-right"><a href="{{ path('_viu.course.index') }}" class="btn-success btn btn-xs"><i
+                          class="fa fa-eye"></i> See</a></td>
+                  </tr>
+                  <tr>
+                    <th>Activities</th>
+                    <td class="text-right">{{ loop.index%4 }}/4</td>
+                    <td class="text-right"><a class="btn-success btn btn-xs"><i class="fa fa-eye"></i> See</a></td>
+                  </tr>
+                  <tr>
+                    <th>Exam</th>
+                    <td class="text-right">{% if loop.index%4 == 0 %}<span class="label label-warning">PENDING</span>
+                      {% else %}<span class="label label-success">DONE</span>{% endif %}</td>
+                    <td class="text-right"><a class="btn-success btn btn-xs"><i class="fa fa-eye"></i> See</a></td>
+                  </tr>
+                  <tr>
+                    <th class="col-sm-3">Mark</th>
+                    <td class="text-right">{{ loop.index%4 +5 }}</td>
+                    <td class="text-right col-sm-2"><a class="btn-success btn btn-xs"><i class="fa fa-eye"></i> See</a>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </section>
+{% endblock %}

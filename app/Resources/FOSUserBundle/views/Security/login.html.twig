@@ -1,0 +1,38 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
+{% block fos_user_content %}
+  {% spaceless %}
+    <div class="row form__login__content">
+      <div class="col-md-4 offset-md-4 form__login__wrapper">
+        <h1>
+          <img src="{{ asset('bundles/app/img/logo/529.png') }}" width="50px"> {{ 'login'|trans|capitalize }}</h1>
+        {% if error %}
+          <div class="alert alert-danger" role="alert">
+            {{ error.messageKey|trans(error.messageData, 'security') }}
+          </div>
+        {% endif %}
+        <form action="{{ path("fos_user_security_check") }}" method="post">
+          <div class="form-group">
+            <label for="username">{{ 'security.login.username'|trans }}</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" required="required"
+                   class="form-control"/>
+          </div>
+
+          <div class="form-group">
+            <label for="password">{{ 'security.login.password'|trans }}</label>
+            <input type="password" id="password" name="_password" required="required" class="form-control"/>
+          </div>
+          <div class="checkbox">
+            <label for="remember_me">
+              <input type="checkbox" id="remember_me" name="_remember_me"
+                     value="on"/>{{ 'security.login.remember_me'|trans }}
+            </label>
+          </div>
+          <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}"
+                 class="btn btn--red float-right"/>
+          <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
+        </form>
+      </div>
+    </div>
+  {% endspaceless %}
+{% endblock %}

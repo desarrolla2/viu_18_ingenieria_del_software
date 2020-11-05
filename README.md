@@ -1,4 +1,4 @@
-# Introduccion
+# Introducción
 
 Este repositorio contiene el trabajo realizado en la UC3 de la asignatura de **ingeniería del software** de la 
 **Universidad Internacional de Valencia**.
